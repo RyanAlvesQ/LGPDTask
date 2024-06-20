@@ -1,0 +1,223 @@
+2024-06-19 23:45:36,065 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2024-06-19 23:45:36,065 - [33mPress CTRL+C to quit[0m
+2024-06-19 23:45:59,846 - Login bem-sucedido para o admin: junior
+2024-06-19 23:45:59,846 - 127.0.0.1 - - [19/Jun/2024 23:45:59] "POST /login HTTP/1.1" 200 -
+2024-06-19 23:46:11,208 - Tentativa de login inválida para o usuário: junior
+2024-06-19 23:46:11,208 - 127.0.0.1 - - [19/Jun/2024 23:46:11] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-06-19 23:51:36,732 - 127.0.0.1 - - [19/Jun/2024 23:51:36] "[31m[1mPUT /usuarios/1 HTTP/1.1[0m" 401 -
+2024-06-19 23:53:27,756 - 127.0.0.1 - - [19/Jun/2024 23:53:27] "[31m[1mGET /ler-usuarios HTTP/1.1[0m" 401 -
+2024-06-19 23:53:34,545 - Login bem-sucedido para o admin: pleno
+2024-06-19 23:53:34,545 - 127.0.0.1 - - [19/Jun/2024 23:53:34] "POST /login HTTP/1.1" 200 -
+2024-06-19 23:54:00,650 - Listagem de usuários realizada por admin: pleno
+2024-06-19 23:54:00,650 - 127.0.0.1 - - [19/Jun/2024 23:54:00] "GET /ler-usuarios HTTP/1.1" 200 -
+2024-06-19 23:57:50,757 - Login bem-sucedido para o admin: pleno
+2024-06-19 23:57:50,757 - 127.0.0.1 - - [19/Jun/2024 23:57:50] "POST /login HTTP/1.1" 200 -
+2024-06-19 23:58:02,006 - Listagem de usuários realizada por admin: pleno
+2024-06-19 23:58:02,006 - 127.0.0.1 - - [19/Jun/2024 23:58:02] "GET /ler-usuarios HTTP/1.1" 200 -
+2024-06-19 23:58:31,749 - Login bem-sucedido para o admin: junior
+2024-06-19 23:58:31,749 - 127.0.0.1 - - [19/Jun/2024 23:58:31] "POST /login HTTP/1.1" 200 -
+2024-06-19 23:58:41,281 - Listagem de usuários realizada por admin: junior
+2024-06-19 23:58:41,282 - 127.0.0.1 - - [19/Jun/2024 23:58:41] "GET /ler-usuarios HTTP/1.1" 200 -
+2024-06-19 23:59:41,252 - Login bem-sucedido para o admin: junior
+2024-06-19 23:59:41,252 - 127.0.0.1 - - [19/Jun/2024 23:59:41] "POST /login HTTP/1.1" 200 -
+2024-06-19 23:59:49,250 - Tentativa de login inválida para o usuário: junior
+2024-06-19 23:59:49,250 - 127.0.0.1 - - [19/Jun/2024 23:59:49] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-06-20 00:06:42,288 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2024-06-20 00:06:42,288 - [33mPress CTRL+C to quit[0m
+2024-06-20 00:07:09,344 - 127.0.0.1 - - [20/Jun/2024 00:07:09] "GET /ler-usuarios HTTP/1.1" 200 -
+2024-06-20 00:07:13,931 - 127.0.0.1 - - [20/Jun/2024 00:07:13] "GET /ler-usuarios HTTP/1.1" 200 -
+2024-06-20 00:22:48,015 - Login bem-sucedido para o admin: pleno
+2024-06-20 00:22:48,015 - 127.0.0.1 - - [20/Jun/2024 00:22:48] "POST /login HTTP/1.1" 200 -
+2024-06-20 00:23:00,249 - Exception on /usuarios/1 [PUT]
+Traceback (most recent call last):
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\Desktop\LGPD\fullcode.py", line 177, in atualizar_usuario_protegido
+    update_user(id, nome, idade, cpf, rg)
+  File "C:\Users\ryanq\Desktop\LGPD\fullcode.py", line 136, in update_user
+    encrypted_cpf = encrypt_data(cpf)
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\Desktop\LGPD\fullcode.py", line 24, in encrypt_data
+    return fernet.encrypt(data.encode())
+                          ^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'encode'
+2024-06-20 00:23:00,251 - 127.0.0.1 - - [20/Jun/2024 00:23:00] "[35m[1mPUT /usuarios/1 HTTP/1.1[0m" 500 -
+2024-06-20 00:26:31,690 - Login bem-sucedido para o admin: pleno
+2024-06-20 00:26:31,691 - 127.0.0.1 - - [20/Jun/2024 00:26:31] "POST /login HTTP/1.1" 200 -
+2024-06-20 00:26:54,451 - Tentativa de acesso não autorizado pelo usuário: pleno
+2024-06-20 00:26:54,451 - 127.0.0.1 - - [20/Jun/2024 00:26:54] "[31m[1mPOST /criar-usuario HTTP/1.1[0m" 403 -
+2024-06-20 00:29:39,051 - Tentativa de acesso não autorizado pelo usuário: pleno
+2024-06-20 00:29:39,051 - 127.0.0.1 - - [20/Jun/2024 00:29:39] "[31m[1mPOST /criar-usuario HTTP/1.1[0m" 403 -
+2024-06-20 00:39:42,680 - Tentativa de acesso não autorizado pelo usuário: pleno
+2024-06-20 00:39:42,680 - 127.0.0.1 - - [20/Jun/2024 00:39:42] "[31m[1mPOST /criar-usuario HTTP/1.1[0m" 403 -
+2024-06-20 00:40:09,148 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2024-06-20 00:40:09,149 - [33mPress CTRL+C to quit[0m
+2024-06-20 00:40:13,430 - Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\Desktop\LGPD\fullcode.py", line 144, in login
+    log_event(f"Login bem-sucedido para o admin: {username}")
+    ^^^^^^^^^
+NameError: name 'log_event' is not defined
+2024-06-20 00:40:13,433 - 127.0.0.1 - - [20/Jun/2024 00:40:13] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2024-06-20 00:40:14,638 - Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\Desktop\LGPD\fullcode.py", line 144, in login
+    log_event(f"Login bem-sucedido para o admin: {username}")
+    ^^^^^^^^^
+NameError: name 'log_event' is not defined
+2024-06-20 00:40:14,640 - 127.0.0.1 - - [20/Jun/2024 00:40:14] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2024-06-20 00:40:44,094 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2024-06-20 00:40:44,094 - [33mPress CTRL+C to quit[0m
+2024-06-20 00:40:47,292 - Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\Desktop\LGPD\fullcode.py", line 144, in login
+    log_event(f"Login bem-sucedido para o admin: {username}")
+    ^^^^^^^^^
+NameError: name 'log_event' is not defined
+2024-06-20 00:40:47,295 - 127.0.0.1 - - [20/Jun/2024 00:40:47] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2024-06-20 00:41:40,954 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2024-06-20 00:41:40,955 - [33mPress CTRL+C to quit[0m
+2024-06-20 00:41:55,030 - Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\Desktop\LGPD\fullcode.py", line 144, in login
+    log_event(f"Login bem-sucedido para o admin: {username}")
+    ^^^^^^^^^
+NameError: name 'log_event' is not defined
+2024-06-20 00:41:55,033 - 127.0.0.1 - - [20/Jun/2024 00:41:55] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2024-06-20 00:42:11,541 - Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\Desktop\LGPD\fullcode.py", line 144, in login
+    conn.close()
+    ^^^^^^^^^
+NameError: name 'log_event' is not defined
+2024-06-20 00:42:11,544 - 127.0.0.1 - - [20/Jun/2024 00:42:11] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2024-06-20 00:42:12,363 - Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryanq\Desktop\LGPD\fullcode.py", line 144, in login
+    conn.close()
+    ^^^^^^^^^
+NameError: name 'log_event' is not defined
+2024-06-20 00:42:12,365 - 127.0.0.1 - - [20/Jun/2024 00:42:12] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2024-06-20 00:44:51,007 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2024-06-20 00:44:51,007 - [33mPress CTRL+C to quit[0m
+2024-06-20 00:46:54,842 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2024-06-20 00:46:54,842 - [33mPress CTRL+C to quit[0m
+2024-06-20 00:52:07,732 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2024-06-20 00:52:07,732 - [33mPress CTRL+C to quit[0m
+2024-06-20 00:52:27,985 - Login bem-sucedido para o admin: pleno
+2024-06-20 00:52:27,985 - 127.0.0.1 - - [20/Jun/2024 00:52:27] "POST /login HTTP/1.1" 200 -
+2024-06-20 00:52:40,674 - Tentativa de acesso não autorizado pelo usuário: pleno
+2024-06-20 00:52:40,674 - 127.0.0.1 - - [20/Jun/2024 00:52:40] "[31m[1mPOST /criar-usuario HTTP/1.1[0m" 403 -
+2024-06-20 00:57:07,041 - Login bem-sucedido para o admin: pleno
+2024-06-20 00:57:07,041 - 127.0.0.1 - - [20/Jun/2024 00:57:07] "POST /login HTTP/1.1" 200 -
+2024-06-20 00:57:30,172 - Tentativa de acesso não autorizado pelo usuário: pleno
+2024-06-20 00:57:30,173 - 127.0.0.1 - - [20/Jun/2024 00:57:30] "[31m[1mPOST /criar-usuario HTTP/1.1[0m" 403 -
+2024-06-20 01:02:18,651 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2024-06-20 01:02:18,651 - [33mPress CTRL+C to quit[0m
+2024-06-20 01:02:26,132 - Novo usuário criado por admin: pleno
+2024-06-20 01:02:26,132 - 127.0.0.1 - - [20/Jun/2024 01:02:26] "POST /criar-usuario HTTP/1.1" 200 -
+2024-06-20 01:10:51,423 - Login bem-sucedido para o admin: pleno
+2024-06-20 01:10:51,423 - 127.0.0.1 - - [20/Jun/2024 01:10:51] "POST /login HTTP/1.1" 200 -
+2024-06-20 01:11:12,361 - Novo usuário criado por admin: pleno
+2024-06-20 01:11:12,361 - 127.0.0.1 - - [20/Jun/2024 01:11:12] "POST /criar-usuario HTTP/1.1" 200 -
+2024-06-20 01:12:04,736 - 127.0.0.1 - - [20/Jun/2024 01:12:04] "[31m[1mGET /ler-usuarios HTTP/1.1[0m" 401 -
+2024-06-20 01:12:09,814 - 127.0.0.1 - - [20/Jun/2024 01:12:09] "GET /ler-usuarios HTTP/1.1" 200 -
+2024-06-20 01:12:32,762 - Login bem-sucedido para o admin: junior
+2024-06-20 01:12:32,762 - 127.0.0.1 - - [20/Jun/2024 01:12:32] "POST /login HTTP/1.1" 200 -
+2024-06-20 01:12:41,321 - 127.0.0.1 - - [20/Jun/2024 01:12:41] "GET /ler-usuarios HTTP/1.1" 200 -
+2024-06-20 01:13:57,642 - Tentativa de login inválida para o usuário: junior
+2024-06-20 01:13:57,642 - 127.0.0.1 - - [20/Jun/2024 01:13:57] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
